@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-cn" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8"/>
+        <title><%= config.title %></title>
+        <link rel="icon" href="<%- url_for('/images/favicon.ico') %>"/>
+        <%- css(['/lib/bootstrap/dist/css/bootstrap.min.css']) %>
+        <%- js('/lib/bootstrap/dist/js/bootstrap.bundle.min.js') %>
+    </head>
+    <body>
+        <%- partial('/_partial/navbar.ejs') %>
+        <main role="main" class="container">
+            <div class="p-5 m-5">
+                <%- body %>
+            </div>
+        </main>
+        <footer class="bg-body-secondary mt-5 py-3 px-3">
+            <span class="text-secondary">&copy;P2441M powered by <a href="https://hexo.io">Hexo</a></span>
+        </footer>
+    </body>
+</html>
