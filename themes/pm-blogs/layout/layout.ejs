@@ -4,8 +4,25 @@
         <meta charset="UTF-8"/>
         <title><%= config.title %></title>
         <link rel="icon" href="<%- url_for('/images/favicon.ico') %>"/>
-        <%- css(['/lib/bootstrap/dist/css/bootstrap.min.css']) %>
+        <%- css(['/css/styles.css', '/lib/bootstrap/dist/css/bootstrap.min.css', '/lib/bootstrap-icons/font/bootstrap-icons.min.css']) %>
         <%- js('/lib/bootstrap/dist/js/bootstrap.bundle.min.js') %>
+        <% if (is_post()) { %>
+            <%- css('/lib/katex/dist/katex.min.css') %>
+            <%- js('/lib/katex/dist/katex.min.js') %>
+            <%- js({
+                src: '/lib/katex/dist/contrib/auto-render.min.js',
+                defer: true,
+                onload: `renderMathInElement(document.querySelector('#post-content'), {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                        {left: '\\[', right: '\\]', display: true}
+                    ],
+                    throwOnError: false
+                });`
+            }) %>
+        <% } %>
     </head>
     <body>
         <%- partial('/_partial/navbar.ejs') %>

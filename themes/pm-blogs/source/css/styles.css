@@ -1,0 +1,44 @@
+blockquote {
+    padding: 1rem;
+    background-color: var(--bs-secondary);
+    border-left: 0.5rem solid var(--bs-info-border-subtle);
+    transition: background-color, border-left-color linear 0.2s;
+}
+
+blockquote:hover {
+    background-color: #7c858d;
+    border-left: 0.5rem solid var(--bs-info);
+    transition: background-color, border-left-color linear 0.2s;
+}
+
+.card-link:hover {
+    text-decoration: underline !important;
+}
+
+#post-content a {
+    text-decoration: none !important;
+}
+
+#post-content h1 {
+    font-size: 1.75rem;
+}
+
+#post-content h2 {
+    font-size: 1.5rem;
+}
+
+#post-content h3 {
+    font-size: 1.25rem !important;
+}
+
+#post-content h4 {
+    font-size: 1rem !important;
+}
+
+#post-content h5 {
+    font-size: 0.75rem !important;
+}
+
+#post-content h6 {
+    font-size: 0.5rem !important;
+}

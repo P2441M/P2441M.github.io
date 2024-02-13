@@ -1,0 +1,16 @@
+<div class="card mt-3 mb-3">
+    <div class="card-header lead">
+        <time datetime="<%= date_xml(post.date) %>"><%= date(post.date) %></time>
+    </div>
+    <div class="card-body">
+        <a class="card-title card-link fs-4 text-decoration-none d-block"
+           href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <small class="card-text text-secondary small d-block">
+            <% if(post.excerpt && post.excerpt.length) { %>
+                <%= post.excerpt %>
+            <% } else { %>
+                此页面暂无简介＞﹏＜
+            <% } %>
+        </small>
+    </div>
+</div>

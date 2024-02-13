@@ -1,0 +1,30 @@
+<div class="bg-body-tertiary p-3 border border-1 border-info rounded-1">
+    <h3><%= page.title %></h3>
+    <small class="d-block small text-secondary my-2">
+        <i class="bi-calendar-check"></i>
+        <time datetime="<%= date_xml(page.date) %>"><%= date(page.date) %>&emsp;</time>
+        <i class="bi-pencil"></i>
+        <% if (page.author) { %>
+            <%= page.author %>
+        <% } else { %>
+            P2441M
+        <% } %>
+    </small>
+    <small class="d-block small text-secondary my-2">
+        <i class="bi-tag"></i>
+        <%- partial("/_partial/categories.ejs", { categories: page.categories }) %>
+    </small>
+    <small class="text-secondary small d-block my-2">
+        <% if(page.excerpt && page.excerpt.length) { %>
+            <%= page.excerpt %>
+        <% } else { %>
+            此页面暂无简介＞﹏＜
+        <% } %>
+    </small>
+
+    <hr/>
+
+    <div id="post-content">
+        <%- page.content %>
+    </div>
+</div>
