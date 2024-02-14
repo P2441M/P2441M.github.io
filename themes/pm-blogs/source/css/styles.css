@@ -11,6 +11,10 @@ blockquote:hover {
     transition: background-color, border-left-color linear 0.2s;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .card-link:hover {
     text-decoration: underline !important;
 }

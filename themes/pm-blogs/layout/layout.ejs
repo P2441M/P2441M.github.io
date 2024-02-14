@@ -7,25 +7,11 @@
         <%- css(['/css/styles.css', '/lib/bootstrap/dist/css/bootstrap.min.css', '/lib/bootstrap-icons/font/bootstrap-icons.min.css']) %>
         <%- js('/lib/bootstrap/dist/js/bootstrap.bundle.min.js') %>
         <% if (is_post()) { %>
-            <%- css('/lib/katex/dist/katex.min.css') %>
-            <%- js('/lib/katex/dist/katex.min.js') %>
-            <%- js({
-                src: '/lib/katex/dist/contrib/auto-render.min.js',
-                defer: true,
-                onload: `renderMathInElement(document.querySelector('#post-content'), {
-                    delimiters: [
-                        {left: '$$', right: '$$', display: true},
-                        {left: '$', right: '$', display: false},
-                        {left: '\\(', right: '\\)', display: false},
-                        {left: '\\[', right: '\\]', display: true}
-                    ],
-                    throwOnError: false
-                });`
-            }) %>
+            <%- partial('/_partial/katex.ejs') %>
         <% } %>
     </head>
     <body>
-        <%- partial('/_partial/navbar.ejs') %>
+        <%- partial('/_partial/navbar.ejs', {}, { cache: true }) %>
         <main role="main" class="container">
             <div class="p-5 m-5">
                 <%- body %>

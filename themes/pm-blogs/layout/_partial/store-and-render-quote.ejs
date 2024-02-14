@@ -1,0 +1,29 @@
+<script>
+    <% const quote = random_daily_quote("/text/quotes.txt") %>
+    const msPerDay = 24 * 60 * 60 * 1000;
+
+    function floorTime(ms) {
+        return Math.floor(ms / msPerDay) * msPerDay;
+    }
+
+    if (!localStorage.getItem("time") || !localStorage.getItem("author") ||
+        !localStorage.getItem("origin") || !localStorage.getItem("content")) {
+        localStorage.setItem("time", floorTime(Date.now()));
+        localStorage.setItem("author", "<%= quote.author %>");
+        localStorage.setItem("origin", "<%= quote.origin %>");
+        localStorage.setItem("content", "<%= quote.content %>");
+    } else {
+        last = floorTime(localStorage.getItem("time"));
+        now = Date.now();
+        if (last >= now || now - last >= msPerDay) {
+            localStorage.setItem("time", floorTime(Date.now()));
+            localStorage.setItem("author", "<%= quote.author %>");
+            localStorage.setItem("origin", "<%= quote.origin %>");
+            localStorage.setItem("content", "<%= quote.content %>");
+        }
+    }
+
+    document.querySelector("#q-content").innerHTML = localStorage.getItem("content");
+    document.querySelector("#q-author").innerHTML = localStorage.getItem("author");
+    document.querySelector("#q-origin").innerHTML = localStorage.getItem("origin");
+</script>

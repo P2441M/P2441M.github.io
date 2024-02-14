@@ -1,0 +1,16 @@
+<span>
+    <img src="<%- url_for('/images/logo.png') %>" width="64" height="64"
+         class="d-inline-block border border-0 rounded-circle align-middle"/>
+    <span class="fs-3 text-info fw-bold" style="font-family: 华文新魏">P2441M 的文章</span>
+</span>
+<%- partial('/_partial/archive.ejs') %>
+
+<div class="btn-group m-2">
+    <%- paginator({
+        prev_text: '<i class="bi-caret-left-fill"></i>',
+        next_text: '<i class="bi-caret-right-fill"></i>',
+        escape: false,
+        page_class: "btn btn-primary",
+        current_class: "btn btn-primary active"
+    }) %>
+</div>
