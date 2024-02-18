@@ -1,15 +1,2 @@
 <%- css('/lib/katex/dist/katex.min.css') %>
 <%- js('/lib/katex/dist/katex.min.js') %>
-<%- js({
-    src: '/lib/katex/dist/contrib/auto-render.min.js',
-    defer: true,
-    onload: `renderMathInElement(document.querySelector('#post-content'), {
-        delimiters: [
-            {left: '$$', right: '$$', display: true},
-            {left: '$', right: '$', display: false},
-            {left: '\\(', right: '\\)', display: false},
-            {left: '\\[', right: '\\]', display: true}
-        ],
-        throwOnError: false
-    });`
-}) %>
