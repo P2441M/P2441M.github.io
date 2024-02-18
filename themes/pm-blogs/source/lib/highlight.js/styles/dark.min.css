@@ -1,0 +1,98 @@
+figure.highlight {
+    padding: 0.5rem;
+    overflow-x: auto;
+}
+
+figure.highlight table {
+    background-color: #1f1f1f;
+}
+
+figure.highlight figcaption {
+    display: flex;
+    font-size: small;
+    color: var(--bs-secondary);
+    margin: 0.25rem;
+}
+
+figure.highlight figcaption a {
+    margin-left: auto;
+}
+
+td.gutter {
+    user-select: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-right: 0.1rem solid var(--bs-light-bg-subtle);
+}
+
+.highlight {
+    background-color: #1f1f1f;
+}
+
+.hljs {
+    background-color: #1f1f1f;
+    color: #dcdcdc;
+}
+
+.hljs-meta,
+.hljs-meta .hljs-keyword {
+    color: #c586c0 !important;
+}
+
+.hljs-type,
+.hljs-keyword,
+.hljs-literal,
+.hljs-variable.language_,
+.hljs-doctag {
+    color: #569cd6;
+}
+
+.hljs-title.class_,
+.hljs-title.class_.inherited__ {
+    color: #3ec9b0;
+}
+
+.hljs-built_in,
+.hljs-title,
+.hljs-title.function_,
+.hljs-title.function_.invoke__ {
+    font-weight: normal;
+    color: #dcdcaa;
+}
+
+.hljs-property,
+.hljs-variable {
+    color: #9cdcfe;
+}
+
+.hljs-variable.constant_ {
+    color: #4fc1ff;
+}
+
+.hljs-number {
+    color: #b5cea8;
+}
+
+.hljs-regexp {
+    color: #d16969;
+}
+
+.hljs-string {
+    color: #ce9178 !important;
+}
+
+.hljs-char.escape_ {
+    color: #d7ba7d;
+}
+
+.hljs-comment {
+    color: #6a9955;
+}
+
+.hljs-operator,
+.hljs-punctuation,
+.hljs-subst,
+.hljs-symbol,
+.hljs-params {
+    color: #dcdcdc;
+}

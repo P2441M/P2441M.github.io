@@ -4,20 +4,21 @@
         <meta charset="UTF-8"/>
         <title><%= config.title %></title>
         <link rel="icon" href="<%- url_for('/images/favicon.ico') %>"/>
-        <%- css(['/css/styles.css', '/lib/bootstrap/dist/css/bootstrap.min.css', '/lib/bootstrap-icons/font/bootstrap-icons.min.css']) %>
-        <%- js('/lib/bootstrap/dist/js/bootstrap.bundle.min.js') %>
+        <%- css(['/css/styles.css', '/lib/bootstrap/dist/css/bootstrap.min.css', '/lib/bootstrap-icons/font/bootstrap-icons.min.css',
+                 '/lib/highlight.js/styles/default.min.css', '/lib/highlight.js/styles/dark.min.css']) %>
+        <%- js(['/lib/bootstrap/dist/js/bootstrap.bundle.min.js', '/lib/highlight.js/highlight.min.js']) %>
         <% if (is_post()) { %>
             <%- partial('/_partial/katex.ejs') %>
         <% } %>
     </head>
-    <body>
+    <body class="d-flex flex-column vh-100">
         <%- partial('/_partial/navbar.ejs', {}, { cache: true }) %>
-        <main role="main" class="container">
-            <div class="p-5 m-5">
+        <main role="main" class="container-fluid">
+            <div class="d-flex flex-column">
                 <%- body %>
             </div>
         </main>
-        <footer class="bg-body-secondary mt-5 py-3 px-3">
+        <footer class="bg-body-secondary mt-auto py-3 px-3">
             <span class="text-secondary">&copy;P2441M powered by <a href="https://hexo.io">Hexo</a></span>
         </footer>
     </body>

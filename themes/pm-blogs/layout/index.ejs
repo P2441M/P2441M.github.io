@@ -1,25 +1,27 @@
-<div class="p-5 mb-4 bg-dark text-light rounded-3 border border-1 border-light">
-    <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">欢迎来到 P2441M 的个人博客！</h1>
-        <p class="lead">
-            本人是一个小小程序猿、柯南迷、生米，在这里发一些博客做笔记或者供大家参考。
-            <b>在这里领略<span class="text-warning">数学和信息</span>的魅力吧！</b>ヾ(≧▽≦*)o
-        </p>
+<div class="container">
+    <div class="p-5 m-5 bg-dark text-light rounded-3 border border-1 border-light">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">欢迎来到 P2441M 的个人博客！</h1>
+            <p class="lead">
+                本人是一个小小程序猿、柯南迷、生米，在这里发一些博客做笔记或者供大家参考。
+                <b>在这里领略<span class="text-warning">数学和信息</span>的魅力吧！</b>ヾ(≧▽≦*)o
+            </p>
+        </div>
     </div>
+    
+    <div class="card m-5">
+        <div class="card-header">
+            <i class="bi-quote"></i>
+            <b>每日一句</b>
+        </div>
+        <div class="card-body">
+            <i id="q-content"></i>
+            <br/>
+            <i style="width: 100%; text-align: right" class="d-inline-block small">
+                ——<span id="q-author"></span>&nbsp;<span id="q-origin"></span>
+            </i>
+        </div>
+    </div>
+    
+    <%- partial("/_partial/store-and-render-quote.ejs") %>
 </div>
-
-<div class="card m-5">
-    <div class="card-header">
-        <i class="bi-quote"></i>
-        <b>每日一句</b>
-    </div>
-    <div class="card-body">
-        <i id="q-content"></i>
-        <br/>
-        <i style="width: 100%; text-align: right" class="d-inline-block small">
-            ——<span id="q-author"></span>&emsp;<span id="q-origin"></span>
-        </i>
-    </div>
-</div>
-
-<%- partial("/_partial/store-and-render-quote.ejs") %>

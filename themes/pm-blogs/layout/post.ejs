@@ -1,30 +1,36 @@
-<div class="bg-body-tertiary p-3 border border-1 border-info rounded-1">
-    <h3><%= page.title %></h3>
-    <small class="d-block small text-secondary my-2">
-        <i class="bi-calendar-check"></i>
-        <time datetime="<%= date_xml(page.date) %>"><%= date(page.date) %>&emsp;</time>
-        <i class="bi-pencil"></i>
-        <% if (page.author) { %>
-            <%= page.author %>
-        <% } else { %>
-            P2441M
-        <% } %>
-    </small>
-    <small class="d-block small text-secondary my-2">
-        <i class="bi-tag"></i>
-        <%- partial("/_partial/categories.ejs", { categories: page.categories }) %>
-    </small>
-    <small class="text-secondary small d-block my-2">
-        <% if(page.excerpt && page.excerpt.length) { %>
-            <%= page.excerpt %>
-        <% } else { %>
-            此页面暂无简介＞﹏＜
-        <% } %>
-    </small>
+<div id="post">
+    <div class="mx-5 mt-5">
+        <h1>
+            <%= page.title %>
+        </h1>
+        <small class="d-block small text-secondary my-2">
+            <i class="bi-calendar-check"></i>
+            <time datetime="<%= date_xml(page.date) %>">
+                <%= date(page.date) %>&emsp;
+            </time>
+            <i class="bi-pencil"></i>
+            <% if (page.author) { %>
+                <%= page.author %>
+                    <% } else { %>
+                        P2441M
+                        <% } %>
+        </small>
+        <small class="d-block small text-secondary my-2">
+            <i class="bi-tag"></i>
+            <%- partial("/_partial/tags.ejs", { tags: page.tags }) %>
+        </small>
+        <small class="text-secondary small d-block my-2">
+            <% if(page.excerpt && page.excerpt.length) { %>
+                <%= page.excerpt %>
+            <% } else { %>
+                此暂无简介＞﹏＜
+            <% } %>
+        </small>
+    </div>
 
-    <hr/>
+    <hr />
 
-    <div id="post-content">
+    <div id="post-content" class="mx-5">
         <%- page.content %>
     </div>
 </div>
